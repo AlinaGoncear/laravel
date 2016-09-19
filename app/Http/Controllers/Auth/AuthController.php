@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+    
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -28,11 +29,11 @@ class AuthController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -43,6 +44,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'telephone' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -58,8 +60,11 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'telephone' => $data['telephone'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
+    
+
 }

@@ -20,6 +20,7 @@ Route::get('contacts', 'PagesController@contacts');
 
 Route::get('about', 'PagesController@about');
 
+Route::get('auth/logout', 'Auth\AuthController@logout');
 
 Route::auth();
 

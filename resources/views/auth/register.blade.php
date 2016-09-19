@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Full name</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -24,6 +24,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Telephone</label>
+                            
+                            <div class="col-md-6">
+                                    <input id="telephone" type="text" class="form-control" name="telephone" value="{{ old('telephone') }}">
+
+                                    @if ($errors->has('telephone'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('telephone') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
