@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+		<title>HealthyMe</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
+		
+		
         <style>
             html, body {
                 height: 100%;
             }
+
 
             body {
                 margin: 0;
@@ -17,6 +19,8 @@
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
+			}
+			
             }
 
             .container {
@@ -33,6 +37,11 @@
             .title {
                 font-size: 96px;
             }
+			
+			.bg-image{
+				background: blue;
+			}
+			
         </style>
     </head>
     <body>
